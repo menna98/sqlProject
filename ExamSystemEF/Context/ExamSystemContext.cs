@@ -72,7 +72,7 @@ namespace ExamSystemEF.Context
             {
                 config.HasKey(a => new { a.St_Id, a.Ex_Id, a.Qu_Id });
                 config.HasOne(a => a.Student).WithMany(a => a.Student_Answers).HasForeignKey(a => a.St_Id);
-                config.HasOne(a => a.Exam).WithMany(a => a.Student_Answers).HasForeignKey(a => a.Ex_Id).OnDelete(DeleteBehavior.NoAction);
+                config.HasOne(a => a.Exam).WithMany(a => a.Student_Answers).HasForeignKey(a => new {a.Ex_Id, a.Qu_Id}).OnDelete(DeleteBehavior.NoAction);
                 config.HasOne(a => a.Question).WithMany(a => a.Student_Answers).HasForeignKey(a => a.Qu_Id).OnDelete(DeleteBehavior.NoAction);
             });
 
@@ -93,9 +93,7 @@ namespace ExamSystemEF.Context
 
             modelBuilder.Entity<Exam>(config => 
             { 
-                config.HasKey(a => a.Ex_Id);
-                config.Property(a => a.Ex_Id).ValueGeneratedOnAdd();
-                config.HasOne(a => a.Course).WithMany(a => a.Exams).HasForeignKey(a => a.Crs_Id);
+                config.HasKey(a => new {a.Ex_Id, a.Qu_Id});
             });
         }
     }

@@ -12,7 +12,6 @@ namespace ExamSystemEF.Models
         public int St_Id { get; set; }
         public string? St_Fname { get; set; }
         public string? St_Lname { get; set; }
-        [DataType(DataType.Date)]
         public DateTime St_DOB { get; set ;}
         public int St_Age { get => (DateTime.Now - St_DOB).Days/365; set { St_DOB = DateTime.Now.AddYears(-value); } }
         public int Dept_Id { get; set; }

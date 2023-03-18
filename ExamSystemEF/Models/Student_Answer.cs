@@ -16,6 +16,6 @@ namespace ExamSystemEF.Models
         public virtual Exam? Exam { get; set; }
         public virtual Question? Question { get; set; }
         public string? St_Ans { get; set; }
-        public int? St_Grade { get => St_Ans == Question?.Qu_ModelAns ? Question?.Qu_Mark : 0; }
+        public int? St_Grade { get; set; }
     }
 }

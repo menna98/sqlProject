@@ -7,7 +7,6 @@ namespace ExamSystemEF
         static void Main(string[] args)
         {
             ExamSystemContext db = new ExamSystemContext();
-
         }
     }
 }
