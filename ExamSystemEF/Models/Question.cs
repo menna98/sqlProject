@@ -16,9 +16,8 @@ namespace ExamSystemEF.Models
         public string? Qu_ModelAns { get; set; }
         public int Crs_Id { get; set; }
         public virtual Course? Course { get; set; }
-        public int? Ex_Id { get; }
-        public virtual Exam? Exam { get; set; }
         public virtual ICollection<Choice> Choices { get; set; } = new HashSet<Choice>();
         public virtual ICollection<Student_Answer> Student_Answers { get; set; } = new HashSet<Student_Answer>();
+        public virtual ICollection<Exam_Question> Exam_Questions { get; set; } = new HashSet<Exam_Question>();
     }
 }

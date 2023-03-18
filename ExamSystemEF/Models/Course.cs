@@ -11,7 +11,7 @@ namespace ExamSystemEF.Models
     {
         public int Crs_Id { get; set; }
         public string Crs_Name { get; set; } = null!;
-        public int EvaluationPercent { get; set; }
+        public int? EvaluationPercent { get; set; }
         public int Ins_Id { get; set; }
         public virtual Instructor? Instructor { get; set; }
         public virtual ICollection<Topic> Topics { get; set; } = new HashSet<Topic>();

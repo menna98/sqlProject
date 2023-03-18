@@ -9,7 +9,8 @@ namespace ExamSystemEF.Models
 {
     public class Choice
     {
-        public string? Qu_Choice { get; set; }
+        public int Ch_Id { get; set; }
+        public string? Ch_Body { get; set; }
         public int Qu_Id { get; set; }
         public virtual Question? Question { get; set; }
     }
